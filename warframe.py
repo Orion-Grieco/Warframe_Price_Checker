@@ -14,7 +14,7 @@ def warframe():
 	main_url = req_url('https://api.warframe.market/v1/items/' + search.replace(' ', '_') + '/statistics')
 	data = main_url.read()
 	parsed = json.loads(data)
-	parsed_data = parsed['payload']['statistics']['48hours'][-1]['avg_price']
+	parsed_data = parsed['payload']['statistics']['48hours'][-1]['min_price']
 
 	print(string.capwords(search) + " average price is " + str(parsed_data) + " platinum")
 

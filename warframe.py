@@ -15,8 +15,9 @@ def warframe():
 	data = main_url.read()
 	parsed = json.loads(data)
 	parsed_data = parsed['payload']['statistics']['48hours'][-1]['min_price']
+	date_time = parsed['payload']['statistics']['48hours'][-1]['datetime']
 
-	print(string.capwords(search) + " minimum price is " + str(parsed_data) + " platinum")
+	print(string.capwords(search) + " minimum price is " + str(parsed_data) + " platinum as of " + date_time)
 
 # Request to open search on warframe.market
 	def browser_open():
